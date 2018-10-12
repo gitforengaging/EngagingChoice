@@ -30,7 +30,7 @@ NOTE: You must provide a description and key NSLocationWhenInUseUsageDescription
 
 ECGridManager
 ```swift
-import FabricSell
+import EngagingChoice
 
 ECGridManager.shared.config(secretKey: "SECRET_KEY") 
 ```
@@ -38,7 +38,7 @@ Replace SECRET_KEY with  publisher secret key
 
 ECMediaContent
 ```swift
-import FabricSell
+import EngagingChoice
 
 ECMediaContentManager.shared.contentList(offset: 0, limit: 10) { (mediaContent) in
 // Get response here
@@ -48,7 +48,7 @@ Offset and limit are optional but you can use these fields for pagination by pas
 
 And you need to call below method to get detail of mediaContent and it's required method to call for content detail
 ```swift
-import FabricSell
+import EngagingChoice
 
 ECMediaContentManager.shared.contentDetail(contentId: MEDIA_CONTENT_ID) { (conent) in
 // Get Media Content detail
@@ -57,7 +57,7 @@ ECMediaContentManager.shared.contentDetail(contentId: MEDIA_CONTENT_ID) { (conen
 
 ECGridView uses
 ```swift
-import FabricSell
+import EngagingChoice
 
 cell.coverImageView.setImage(with: URL(string: "http://www.domain.com/path/to/image.jpg"))
 
@@ -88,7 +88,7 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Installation
 
-FabricSell is available through [CocoaPods](https://cocoapods.org). To install
+EngagingChoice is available through [CocoaPods](https://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 
