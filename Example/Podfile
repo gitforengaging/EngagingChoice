@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'EngagingChoice_Example' do
+  pod 'EngagingChoice', :path => '../'
+
+  target 'EngagingChoice_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
