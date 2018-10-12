@@ -31,7 +31,7 @@
 		0D609E1978167C243183B167 /* Pods-EngagingChoice_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EngagingChoice_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-EngagingChoice_Example/Pods-EngagingChoice_Example.release.xcconfig"; sourceTree = "<group>"; };
 		1DFBB74B70F6D1FF4ACE8383 /* Pods-EngagingChoice_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EngagingChoice_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EngagingChoice_Tests/Pods-EngagingChoice_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		374DA45B74B72F704AB33FF7 /* Pods_EngagingChoice_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EngagingChoice_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		47D1AED65F833E48FF7490E0 /* EngagingChoice.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = EngagingChoice.podspec; path = ../EngagingChoice.podspec; sourceTree = "<group>"; };
+		47D1AED65F833E48FF7490E0 /* EngagingChoice.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = EngagingChoice.podspec; path = ../EngagingChoice.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		607FACD01AFB9204008FA782 /* EngagingChoice_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EngagingChoice_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -45,8 +45,8 @@
 		8C34F88A2F2AAF198406E6F4 /* Pods-EngagingChoice_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EngagingChoice_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EngagingChoice_Example/Pods-EngagingChoice_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		B8AD79CE81A37FF209BF3A46 /* Pods_EngagingChoice_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EngagingChoice_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBC197973E30985EE7EEDAD4 /* Pods-EngagingChoice_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EngagingChoice_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EngagingChoice_Tests/Pods-EngagingChoice_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		DD0EBADF32DD1438A5781C09 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		DFB3C262BCB74E02AAD3B5A4 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		DD0EBADF32DD1438A5781C09 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		DFB3C262BCB74E02AAD3B5A4 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -286,11 +286,15 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-EngagingChoice_Example/Pods-EngagingChoice_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/EngagingChoice/EngagingChoice.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EngagingChoice.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -470,6 +474,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = EngagingChoice/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
@@ -485,6 +490,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = EngagingChoice/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";

@@ -1,0 +1,6 @@
+framework module EngagingChoice {
+  umbrella header "EngagingChoice-umbrella.h"
+
+  export *
+  module * { export * }
+}
