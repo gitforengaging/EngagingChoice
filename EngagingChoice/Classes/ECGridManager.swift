@@ -1,6 +1,6 @@
 //
 //  ECGridManager.swift
-//  FabricSell
+//  EngagingChoice
 //
 //  Created by KiwiTech on 04/09/18.
 //

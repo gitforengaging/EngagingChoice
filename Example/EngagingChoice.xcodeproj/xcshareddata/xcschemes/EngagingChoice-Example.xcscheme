@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0900"
+   LastUpgradeVersion = "0940"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-               BuildableName = "EngagingChoice_Example.app"
+               BuildableName = "Film Time.app"
                BlueprintName = "EngagingChoice_Example"
                ReferencedContainer = "container:EngagingChoice.xcodeproj">
             </BuildableReference>
@@ -40,7 +40,6 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      language = ""
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
          <TestableReference
@@ -58,7 +57,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "EngagingChoice_Example.app"
+            BuildableName = "Film Time.app"
             BlueprintName = "EngagingChoice_Example"
             ReferencedContainer = "container:EngagingChoice.xcodeproj">
          </BuildableReference>
@@ -70,7 +69,6 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      language = ""
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
@@ -82,7 +80,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "EngagingChoice_Example.app"
+            BuildableName = "Film Time.app"
             BlueprintName = "EngagingChoice_Example"
             ReferencedContainer = "container:EngagingChoice.xcodeproj">
          </BuildableReference>
@@ -101,7 +99,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "EngagingChoice_Example.app"
+            BuildableName = "Film Time.app"
             BlueprintName = "EngagingChoice_Example"
             ReferencedContainer = "container:EngagingChoice.xcodeproj">
          </BuildableReference>

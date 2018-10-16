@@ -9,12 +9,16 @@
 /* Begin PBXBuildFile section */
 		0CBAB98CF5F74740BAD1BB30 /* Pods_EngagingChoice_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8AD79CE81A37FF209BF3A46 /* Pods_EngagingChoice_Example.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
-		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		6938DA6714114A9B48182DEB /* Pods_EngagingChoice_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 374DA45B74B72F704AB33FF7 /* Pods_EngagingChoice_Tests.framework */; };
+		D60E91792170D80600B193A1 /* ExampleCollectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60E91742170D80600B193A1 /* ExampleCollectionTableViewCell.swift */; };
+		D60E917A2170D80600B193A1 /* ExampleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60E91752170D80600B193A1 /* ExampleDetailViewController.swift */; };
+		D60E917B2170D80600B193A1 /* ExampleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60E91762170D80600B193A1 /* ExampleTableViewController.swift */; };
+		D60E917C2170D80600B193A1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60E91772170D80600B193A1 /* LoginViewController.swift */; };
+		D60E917D2170D80600B193A1 /* ExampleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60E91782170D80600B193A1 /* ExampleCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,10 +36,9 @@
 		1DFBB74B70F6D1FF4ACE8383 /* Pods-EngagingChoice_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EngagingChoice_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EngagingChoice_Tests/Pods-EngagingChoice_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		374DA45B74B72F704AB33FF7 /* Pods_EngagingChoice_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EngagingChoice_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		47D1AED65F833E48FF7490E0 /* EngagingChoice.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = EngagingChoice.podspec; path = ../EngagingChoice.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		607FACD01AFB9204008FA782 /* EngagingChoice_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EngagingChoice_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		607FACD01AFB9204008FA782 /* Film Time.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Film Time.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		607FACD71AFB9204008FA782 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		607FACDA1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -45,6 +48,11 @@
 		8C34F88A2F2AAF198406E6F4 /* Pods-EngagingChoice_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EngagingChoice_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EngagingChoice_Example/Pods-EngagingChoice_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		B8AD79CE81A37FF209BF3A46 /* Pods_EngagingChoice_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EngagingChoice_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBC197973E30985EE7EEDAD4 /* Pods-EngagingChoice_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EngagingChoice_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EngagingChoice_Tests/Pods-EngagingChoice_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		D60E91742170D80600B193A1 /* ExampleCollectionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleCollectionTableViewCell.swift; sourceTree = "<group>"; };
+		D60E91752170D80600B193A1 /* ExampleDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleDetailViewController.swift; sourceTree = "<group>"; };
+		D60E91762170D80600B193A1 /* ExampleTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleTableViewController.swift; sourceTree = "<group>"; };
+		D60E91772170D80600B193A1 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		D60E91782170D80600B193A1 /* ExampleCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleCollectionViewCell.swift; sourceTree = "<group>"; };
 		DD0EBADF32DD1438A5781C09 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		DFB3C262BCB74E02AAD3B5A4 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -93,7 +101,7 @@
 		607FACD11AFB9204008FA782 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				607FACD01AFB9204008FA782 /* EngagingChoice_Example.app */,
+				607FACD01AFB9204008FA782 /* Film Time.app */,
 				607FACE51AFB9204008FA782 /* EngagingChoice_Tests.xctest */,
 			);
 			name = Products;
@@ -103,7 +111,11 @@
 			isa = PBXGroup;
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
-				607FACD71AFB9204008FA782 /* ViewController.swift */,
+				D60E91742170D80600B193A1 /* ExampleCollectionTableViewCell.swift */,
+				D60E91782170D80600B193A1 /* ExampleCollectionViewCell.swift */,
+				D60E91752170D80600B193A1 /* ExampleDetailViewController.swift */,
+				D60E91762170D80600B193A1 /* ExampleTableViewController.swift */,
+				D60E91772170D80600B193A1 /* LoginViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -178,7 +190,7 @@
 			);
 			name = EngagingChoice_Example;
 			productName = EngagingChoice;
-			productReference = 607FACD01AFB9204008FA782 /* EngagingChoice_Example.app */;
+			productReference = 607FACD01AFB9204008FA782 /* Film Time.app */;
 			productType = "com.apple.product-type.application";
 		};
 		607FACE41AFB9204008FA782 /* EngagingChoice_Tests */ = {
@@ -207,12 +219,14 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = 8HPANVN593;
 						LastSwiftMigration = 0900;
+						ProvisioningStyle = Manual;
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
@@ -326,7 +340,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				D60E917B2170D80600B193A1 /* ExampleTableViewController.swift in Sources */,
+				D60E91792170D80600B193A1 /* ExampleCollectionTableViewCell.swift in Sources */,
+				D60E917A2170D80600B193A1 /* ExampleDetailViewController.swift in Sources */,
+				D60E917D2170D80600B193A1 /* ExampleCollectionViewCell.swift in Sources */,
+				D60E917C2170D80600B193A1 /* LoginViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -381,12 +399,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -414,7 +434,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -434,12 +454,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -460,7 +482,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -473,12 +495,17 @@
 			baseConfigurationReference = 8C34F88A2F2AAF198406E6F4 /* Pods-EngagingChoice_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: KiwiTech, LLC";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 8HPANVN593;
 				INFOPLIST_FILE = EngagingChoice/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kiwitech.funnetwork;
+				PRODUCT_NAME = "Film Time";
+				PROVISIONING_PROFILE = "8c06f775-c218-4d45-94a2-e79e880ecf60";
+				PROVISIONING_PROFILE_SPECIFIER = "KiwiTech Enterprise Release Star";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 			};
@@ -489,12 +516,17 @@
 			baseConfigurationReference = 0D609E1978167C243183B167 /* Pods-EngagingChoice_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: KiwiTech, LLC";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 8HPANVN593;
 				INFOPLIST_FILE = EngagingChoice/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kiwitech.funnetwork;
+				PRODUCT_NAME = "Film Time";
+				PROVISIONING_PROFILE = "8c06f775-c218-4d45-94a2-e79e880ecf60";
+				PROVISIONING_PROFILE_SPECIFIER = "KiwiTech Enterprise Release Star";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 			};

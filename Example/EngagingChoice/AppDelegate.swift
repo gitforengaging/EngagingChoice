@@ -2,20 +2,27 @@
 //  AppDelegate.swift
 //  EngagingChoice
 //
-//  Created by shahwalkhan@gmail.com on 10/12/2018.
+//  Created by shahwalkhan@gmail.com on 09/01/2018.
 //  Copyright (c) 2018 shahwalkhan@gmail.com. All rights reserved.
 //
 
 import UIKit
-
+import EngagingChoice
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var emailAddres:String?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+//        ECGridManager.shared.config(secretKey: "300f2011c-9024-4bc0-9351-1ba9fced7d4f") //QA
+        //        ECGridManager.shared.config(secretKey: "118c871ff76-4d9c-4eef-8a32-2b8b7cebf524") //QA2
+          ECGridManager.shared.config(secretKey: "5abd927e6-fbc8-4b0d-b4e6-f0016afaea65") // QA3
+//                ECGridManager.shared.config(secretKey: "3258c0da8-38db-431f-a062-e44a59725c02") // Staging
+//        ECGridManager.shared.config(secretKey: "5d89d23dc-05db-4c47-8ad0-fc98e1d8f20b") // Load testing
+        UINavigationBar.appearance().barTintColor = UIColor(red: 61/255, green: 106/255, blue: 211/255, alpha: 1.0)
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.white]
         return true
     }
 

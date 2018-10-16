@@ -1,6 +1,6 @@
 //
 //  ECOfferViewModel.swift
-//  FabricSell
+//  EngagingChoice
 //
 //  Created by KiwiTech on 05/09/18.
 //
@@ -20,11 +20,15 @@ class ECOfferViewModel {
         }
         return .none
     }
+    // MARK: - Fetch Offer List
     internal func fetchOfferList(success:@escaping () -> Void, failed:@escaping (_ error: Error?) -> Void)  {
         // Make sure email address setup correctly
         guard let email = ECGridManager.shared.getEmailAddress else { return }
-        // String url address for offerlist 
-        let stringURL = "\(EngagingChoiceAPIBaseURL.baseURL)\(EngagingChoiceAPIEndPoint.offerList.rawValue)/\(email)"
+        // String url address for offerlist with email, longitude and latitude parameter
+        var stringURL = "\(EngagingChoiceAPIEndPoint.offerList.url)/\(email)"
+        if let coordinates = userCoordinates {
+            stringURL.append("/\(coordinates.latitude)/\(coordinates.longitude)")
+        }
         // Make sure URL is nil before making request to server
         guard let url = URL(string: stringURL) else { return }
         // Download data from server

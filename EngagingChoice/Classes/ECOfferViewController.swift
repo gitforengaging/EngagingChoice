@@ -1,25 +1,12 @@
 //
 //  ECOfferViewController.swift
-//  FabricSell
+//  EngagingChoice
 //
 //  Created by KiwiTech on 25/09/18.
 //
 
 import UIKit
 import CoreLocation
-extension ECOfferViewController: CLLocationManagerDelegate {
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        // stop location manager
-        self.locationManager.stopUpdatingLocation()
-        self.locatonCallback()
-    }
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        self.gridModelView.userCoordinates = locations.first?.coordinate
-        // stop location manager
-        self.locationManager.stopUpdatingLocation()
-        self.locatonCallback()
-    }
-}
 class ECOfferViewController: UIViewController {
     @IBOutlet weak var headerTitle: UILabel!
     @IBOutlet weak var tableView: UITableView!
@@ -31,7 +18,8 @@ class ECOfferViewController: UIViewController {
      // MARK: - Location Manager
     fileprivate let locationManager = CLLocationManager()
      // MARK: - location permission callback
-    fileprivate var locatonCallback:(() -> Void) = {}
+    fileprivate var locationCallback:(() -> Void) = {}
+    fileprivate var isLocationManagerStartUpdating = false
     // MARK: - Controller Life Cycle method
     override open func viewDidLoad() {
         super.viewDidLoad()
@@ -43,8 +31,8 @@ class ECOfferViewController: UIViewController {
         tableView.delegate = self
         self.checkLocationPermission {
             self.getOffers()
+            self.locationCallback = {}
         }
-       
     }
     fileprivate func getOffers() {
         // Get data from ViewModel
@@ -64,37 +52,6 @@ class ECOfferViewController: UIViewController {
             self.dismiss(animated: true, completion: {
                 self.showGridDelegate?.didFinishedShowOffer()
             })
-        }
-    }
-    func checkLocationPermission(callback:@escaping () -> Void) {
-        self.locatonCallback = callback
-        let status = CLLocationManager.authorizationStatus()
-        switch status {
-        case .notDetermined:
-            locationManager.requestWhenInUseAuthorization()
-            return
-        case .denied, .restricted:
-            self.promptToAppSettings()
-            return
-        default:
-            break
-        }
-        locationManager.delegate = self
-        locationManager.startUpdatingLocation()
-    }
-    private func promptToAppSettings() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) { [weak self] in
-            let alert = UIAlertController(title: "Location Services Disabled", message: "Please enable Location Services in Settings", preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-            let goToSetting = UIAlertAction(title: "Setting", style: .destructive, handler: { (action) in
-                if let url = URL(string: "App-Prefs:root=Privacy&path=LOCATION") {
-                    // If general location settings are disabled then open general location settings
-                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
-                }
-            })
-            alert.addAction(okAction)
-            alert.addAction(goToSetting)
-            self?.present(alert, animated: true, completion: nil)
         }
     }
     // MARK: - Show SignUp Form
@@ -169,5 +126,67 @@ extension ECOfferViewController:UITableViewDelegate {
         ECDownloadManager.shared.updateViewCountOnServer(type: EngagingChoiceTypeValue.offer.rawValue, id: self.gridModelView.offerList[indexPath.row].id)
         // Show View Controller
         self.show(detailGridViewController, sender: self)
+    }
+}
+extension ECOfferViewController: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        self.checkStatus(status: status)
+    }
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        // stop location manager
+        self.locationManager.stopUpdatingLocation()
+        self.locationCallback()
+    }
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        self.gridModelView.userCoordinates = locations.first?.coordinate
+        // stop location manager
+        self.locationManager.stopUpdatingLocation()
+        self.locationCallback()
+    }
+}
+extension ECOfferViewController {
+    // MARK: - Location permission check
+    func checkLocationPermission(callback:@escaping () -> Void) {
+        self.locationCallback = callback
+        let status = CLLocationManager.authorizationStatus()
+        locationManager.delegate = self
+        self.checkStatus(status: status)
+    }
+    // MARK: - loation permission status
+    fileprivate func checkStatus(status: CLAuthorizationStatus)  {
+        switch status {
+        case .notDetermined:
+            locationManager.requestWhenInUseAuthorization()
+            return
+        case .denied, .restricted:
+            self.promptToAppSettings()
+            return
+        default:
+            break
+        }
+        // Start Updating only when first time
+        if !isLocationManagerStartUpdating {
+            self.isLocationManagerStartUpdating = true
+            locationManager.startUpdatingLocation()
+        }
+    }
+    // MARK: - Show AlertView for location setting
+    private func promptToAppSettings() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) { [weak self] in
+            let alert = UIAlertController(title: EngagingChoiceName.locationAlerHeading.rawValue, message: EngagingChoiceName.locationAlertMessage.rawValue, preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                self?.locationCallback()
+            })
+            let goToSetting = UIAlertAction(title: "Setting", style: .destructive, handler: { (action) in
+                self?.locationCallback()
+                if let url = URL(string: "App-Prefs:root=Privacy&path=LOCATION") {
+                    // If general location settings are disabled then open general location settings
+                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                }
+            })
+            alert.addAction(okAction)
+            alert.addAction(goToSetting)
+            self?.present(alert, animated: true, completion: nil)
+        }
     }
 }

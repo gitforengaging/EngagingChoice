@@ -22,7 +22,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EGOfferGridDetailViewController" customModule="FabricSell" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EGOfferGridDetailViewController" customModule="EngagingChoice" customModuleProvider="target">
             <connections>
                 <outlet property="activityIndicator" destination="hWG-XQ-Ulk" id="yby-Nm-rxb"/>
                 <outlet property="coverImageView" destination="Ub5-Ob-HJ0" id="xFY-L1-mCC"/>
@@ -41,7 +41,7 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cellShimmer" translatesAutoresizingMaskIntoConstraints="NO" id="Ub5-Ob-HJ0">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cellShimmer" translatesAutoresizingMaskIntoConstraints="NO" id="Ub5-Ob-HJ0" propertyAccessControl="none">
                     <rect key="frame" x="0.0" y="141.66666666666669" width="414" height="232.66666666666669"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
@@ -63,7 +63,7 @@
                         </mask>
                     </variation>
                 </imageView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y1p-Gz-Ko2" customClass="VideoContainerView" customModule="FabricSell" customModuleProvider="target">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y1p-Gz-Ko2" customClass="VideoContainerView" customModule="EngagingChoice" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="141.66666666666669" width="414" height="232.66666666666669"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
@@ -101,7 +101,7 @@
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CWR-hI-XU0">
                             <rect key="frame" x="0.0" y="0.0" width="344" height="44"/>
-                            <color key="backgroundColor" red="0.89019607840000003" green="0.91764705879999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" red="0.94509803921568625" green="0.94901960784313721" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="100" id="QhD-5e-OlS"/>
                                 <constraint firstAttribute="height" constant="44" id="j6Z-56-8dA"/>

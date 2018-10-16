@@ -1,6 +1,6 @@
 //
 //  ECMediaContentModel.swift
-//  FabricSell
+//  EngagingChoice
 //
 //  Created by KiwiTech on 21/09/18.
 //

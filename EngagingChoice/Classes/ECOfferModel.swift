@@ -1,6 +1,6 @@
 //
 //  ECOfferModel.swift
-//  FabricSell
+//  EngagingChoice
 //
 //  Created by KiwiTech on 05/09/18.
 //

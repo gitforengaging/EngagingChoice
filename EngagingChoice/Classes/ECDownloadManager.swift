@@ -39,7 +39,7 @@ class ECDownloadManager: NSObject {
     }
     // MARK: - Update ViewCount
     internal func updateViewCountOnServer(type:Int, id:Int)  {
-        let stringURL = "\(EngagingChoiceAPIBaseURL.baseURL)\(EngagingChoiceAPIEndPoint.viewCount.rawValue)"
+        let stringURL = "\(EngagingChoiceAPIEndPoint.viewCount.url)"
         guard let url = URL(string: stringURL) else { return }
         Alamofire.request(url, method: .put, parameters: [EngaingChoiceAPIKey.id.rawValue: id, EngaingChoiceAPIKey.type.rawValue: type] ,encoding: URLEncoding.methodDependent, headers: headers).responseJSON {
             response in
@@ -54,7 +54,7 @@ class ECDownloadManager: NSObject {
     }
     // MARK: - Update UserInfo
     internal func updateUserInfo(email: String, number:String, success:@escaping() -> Void, failed:@escaping (_ error:String) -> Swift.Void)  {
-        guard let url = URL(string: "\(EngagingChoiceAPIBaseURL.baseURL)\(EngagingChoiceAPIEndPoint.updatUserInfo.rawValue)") else { return }
+        guard let url = URL(string: "\(EngagingChoiceAPIEndPoint.updatUserInfo.url)") else { return }
         let oldEmailAddress = ECGridManager.shared.getEmailAddress == nil ? "" : ECGridManager.shared.getEmailAddress!
         let parameters  = [EngaingChoiceAPIKey.oldEmail.rawValue: oldEmailAddress, EngaingChoiceAPIKey.email.rawValue: email, EngaingChoiceAPIKey.mobile.rawValue: number]
         Alamofire.request(url, method: .post, parameters: parameters, encoding: URLEncoding.methodDependent, headers: headers).responseJSON {
@@ -77,14 +77,14 @@ class ECDownloadManager: NSObject {
     }
     // MARK: - Update Offer Action
     internal func updateOfferActionOnServer(action: EngagingChoiceOfferAction, offerId: Int, contentId: Int?)  {
-        let stringURL = "\(EngagingChoiceAPIBaseURL.baseURL)\(EngagingChoiceAPIEndPoint.offerAction.rawValue)"
+        let stringURL = "\(EngagingChoiceAPIEndPoint.offerAction.url)"
         guard let url = URL(string: stringURL) else { return }
         guard let email = ECGridManager.shared.getEmailAddress else { return }
-        let paramters = [EngaingChoiceAPIKey.offerId.rawValue: offerId,
+        let parameter = [EngaingChoiceAPIKey.offerId.rawValue: offerId,
                          EngaingChoiceAPIKey.action.rawValue: action.rawValue,
                          EngaingChoiceAPIKey.contentId.rawValue: contentId ?? "",
                          EngaingChoiceAPIKey.email.rawValue: email] as [String : Any]
-        Alamofire.request(url, method: .post, parameters: paramters ,encoding: URLEncoding.methodDependent, headers: headers).responseJSON {
+        Alamofire.request(url, method: .post, parameters: parameter ,encoding: URLEncoding.methodDependent, headers: headers).responseJSON {
             response in
             switch response.result {
             case .success:

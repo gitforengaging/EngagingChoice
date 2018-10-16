@@ -1,6 +1,6 @@
 //
 //  ECGridView.swift
-//  FabricSell
+//  EngagingChoice
 //
 //  Created by apple on 01/09/18.
 //
@@ -11,14 +11,15 @@ open class ECGridView: UIView {
     // Bool variable to show and hide PoweredBy icon
     @IBInspectable open var enabledPowerBy: Bool = false {
         didSet {
-            if powerByThumImageView != nil {
-                powerByThumImageView.isHidden = !enabledPowerBy
+            if poweredByThumbView != nil {
+                poweredByThumbView.isHidden = !enabledPowerBy
             }
         }
     }
     // UIImageView to show images
     public var coverImageView:UIImageView!
-    fileprivate var powerByThumImageView:UIImageView!
+    fileprivate var poweredByThumbView: UIView!
+    fileprivate var powerByThumbImageView:UIImageView!
     // Local Flag to controll functionality
     fileprivate var shouldSetupConstraints = true
     fileprivate(set) var isSetup = false
@@ -56,13 +57,16 @@ open class ECGridView: UIView {
         coverImageView.backgroundColor = UIColor.gray
         coverImageView.contentMode = self.contentMode
         self.addSubview(coverImageView)
-        //  poweredBy Engaging Choice icon | by default it's invisible
-        powerByThumImageView = UIImageView(frame: CGRect.zero)
-        powerByThumImageView.backgroundColor = UIColor(red: 61/255, green: 106/255, blue: 211/255, alpha: 1.0)
-        powerByThumImageView.contentMode = .center
-        powerByThumImageView.image = UIImage.poweredByIcon
-        powerByThumImageView.isHidden = !enabledPowerBy
-        self.addSubview(powerByThumImageView)
+        //  poweredBy UIView
+        poweredByThumbView = UIView(frame: CGRect.zero)
+        poweredByThumbView.backgroundColor = UIColor(red: 61/255, green: 106/255, blue: 211/255, alpha: 1.0)
+        self.addSubview(poweredByThumbView)
+        poweredByThumbView.isHidden = !enabledPowerBy
+        //  poweredBy UIImageView
+        powerByThumbImageView = UIImageView(frame: CGRect.zero)
+        powerByThumbImageView.contentMode = .scaleAspectFit
+        powerByThumbImageView.image = UIImage.poweredByIcon
+        poweredByThumbView.addSubview(powerByThumbImageView)
     }
     // MARK: - Accessibility
     /**
@@ -76,35 +80,65 @@ open class ECGridView: UIView {
     // MARK: - Constraints
     func setupConstraints() {
         if(shouldSetupConstraints) {
-            powerByThumImageView.translatesAutoresizingMaskIntoConstraints = false
+            poweredByThumbView.translatesAutoresizingMaskIntoConstraints = false
+            powerByThumbImageView.translatesAutoresizingMaskIntoConstraints = false
             coverImageView.translatesAutoresizingMaskIntoConstraints = false
-            // AutoLayout constraints
-            addConstraint(NSLayoutConstraint(item: powerByThumImageView,
+            // Thumb View Contraint
+            addConstraint(NSLayoutConstraint(item: poweredByThumbView,
                                              attribute: .height,
                                              relatedBy: .equal,
                                              toItem: nil,
                                              attribute: .notAnAttribute,
                                              multiplier: 1,
-                                             constant: 24))
-            addConstraint(NSLayoutConstraint(item: powerByThumImageView,
+                                             constant: 32))
+            addConstraint(NSLayoutConstraint(item: poweredByThumbView,
                                              attribute: .width,
                                              relatedBy: .equal,
                                              toItem: nil,
                                              attribute: .notAnAttribute,
                                              multiplier: 1,
-                                             constant: 24))
-            addConstraint(NSLayoutConstraint(item: powerByThumImageView,
+                                             constant: 32))
+            addConstraint(NSLayoutConstraint(item: poweredByThumbView,
                                              attribute: .trailing,
                                              relatedBy: .equal,
                                              toItem: self,
                                              attribute: .trailing,
                                              multiplier: 1,
                                              constant:0))
-            addConstraint(NSLayoutConstraint(item: powerByThumImageView,
+            addConstraint(NSLayoutConstraint(item: poweredByThumbView,
                                              attribute: .bottom,
                                              relatedBy: .equal,
                                              toItem: self,
                                              attribute: .bottom,
+                                             multiplier: 1,
+                                             constant: 0))
+            // Thumb image Contraint
+            addConstraint(NSLayoutConstraint(item: powerByThumbImageView,
+                                             attribute: .height,
+                                             relatedBy: .equal,
+                                             toItem: nil,
+                                             attribute: .notAnAttribute,
+                                             multiplier: 1,
+                                             constant: 16))
+            addConstraint(NSLayoutConstraint(item: powerByThumbImageView,
+                                             attribute: .width,
+                                             relatedBy: .equal,
+                                             toItem: nil,
+                                             attribute: .notAnAttribute,
+                                             multiplier: 1,
+                                             constant: 14.5))
+            addConstraint(NSLayoutConstraint(item: powerByThumbImageView,
+                                             attribute: .centerY,
+                                             relatedBy: .equal,
+                                             toItem: poweredByThumbView,
+                                             attribute: .centerY,
+                                             multiplier: 1,
+                                             constant:0))
+            addConstraint(NSLayoutConstraint(item: powerByThumbImageView,
+                                             attribute: .centerX,
+                                             relatedBy: .equal,
+                                             toItem: poweredByThumbView,
+                                             attribute: .centerX,
                                              multiplier: 1,
                                              constant: 0))
             // Add CoverImage Constraint

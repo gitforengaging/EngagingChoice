@@ -1,6 +1,6 @@
 //
 //  UtilitiesExtensions.swift
-//  FabricSell
+//  EngagingChoice
 //
 //  Created by KiwiTech on 10/09/18.
 //
@@ -14,6 +14,8 @@ enum EngagingChoiceName:String {
     case guestUserProfileSubTitle = "Your Profile is not complete yet, Please complete your profile first using new email id and get more offers."
     case alertMessage = "Please fill all required fields"
     case success =  "Your details have been saved successfully"
+    case locationAlerHeading = "Location Services Disabled"
+    case locationAlertMessage = "Please enable Location Services in Settings"
 }
 enum EngagingChoiceGridCell:CGFloat {
     case cellHeight = 200
@@ -35,6 +37,22 @@ enum EngagingChoiceAPIEndPoint:String {
     case viewCount = "/view-count"
     case updatUserInfo = "/user-update-info"
     case offerAction = "/offer-action"
+    var url: String {
+        switch self {
+        case .offerList:
+            return "\(EngagingChoiceAPIBaseURL.baseURL)\(EngagingChoiceAPIEndPoint.offerList.rawValue)"
+        case .contentList:
+            return "\(EngagingChoiceAPIBaseURL.baseURL)\(EngagingChoiceAPIEndPoint.contentList.rawValue)"
+        case .contentDetail:
+            return "\(EngagingChoiceAPIBaseURL.baseURL)\(EngagingChoiceAPIEndPoint.contentDetail.rawValue)"
+        case .viewCount:
+            return "\(EngagingChoiceAPIBaseURL.baseURL)\(EngagingChoiceAPIEndPoint.viewCount.rawValue)"
+        case .offerAction:
+            return "\(EngagingChoiceAPIBaseURL.baseURL)\(EngagingChoiceAPIEndPoint.offerAction.rawValue)"
+        case .updatUserInfo:
+            return "\(EngagingChoiceAPIBaseURL.baseURL)\(EngagingChoiceAPIEndPoint.updatUserInfo.rawValue)"
+        }
+    }
 }
 enum FormatterDate:String {
     case MMDY = "MMM dd, yyyy"
@@ -138,7 +156,7 @@ extension UIColor {
 extension Bundle {
     static var bundle:Bundle {
         let podBundle = Bundle(for: ECOfferTableViewCell.self)
-        let bundleURL = podBundle.url(forResource: "FabricSell", withExtension: "bundle")
+        let bundleURL = podBundle.url(forResource: "EngagingChoice", withExtension: "bundle")
         return Bundle(url: bundleURL!)!
     }
 }

@@ -5,12 +5,12 @@
 
 # EngagingChoice
 
-[![CI Status](https://img.shields.io/travis/shahwalkhan@gmail.com/EngagingChoice.svg?style=flat)](https://travis-ci.org/shahwalkhan@gmail.com/EngagingChoice)
+[![CI Status](https://img.shields.io/travis/gitforengaging@gmail.com/EngagingChoice.svg?style=flat)](https://travis-ci.org/gitforengaging@gmail.com/EngagingChoice)
 [![Version](https://img.shields.io/cocoapods/v/EngagingChoice.svg?style=flat)](https://cocoapods.org/pods/EngagingChoice)
 [![License](https://img.shields.io/cocoapods/l/EngagingChoice.svg?style=flat)](https://cocoapods.org/pods/EngagingChoice)
 [![Platform](https://img.shields.io/cocoapods/p/EngagingChoice.svg?style=flat)](https://cocoapods.org/pods/EngagingChoice)
 
-This library provides a ECGridView to show MediaContent and ECPoweredByView to show Engaging Choice icon. For convenience, we make subClass for view 
+This library provides a ECGridView to show MediaContent and ECPoweredByView to show Engaging Choice icon. For convenience, we make subClass for UIViewview 
 
 Features
 
@@ -34,7 +34,7 @@ import EngagingChoice
 
 ECGridManager.shared.config(secretKey: "SECRET_KEY") 
 ```
-Replace SECRET_KEY with  publisher secret key
+Replace SECRET_KEY with  publisher secret key and add above line of code in didFinishLaunchingWithOptions in appDelegate class
 
 ECMediaContent
 ```swift
@@ -53,7 +53,7 @@ import EngagingChoice
 ECMediaContentManager.shared.contentDetail(contentId: MEDIA_CONTENT_ID) { (conent) in
 // Get Media Content detail
 }
-``
+```
 
 ECGridView uses
 ```swift
@@ -76,8 +76,6 @@ self.view.addSubview(poweredByView)
 ```
 OR
 ECPoweredByView can also used from storyboard by draging UIView in UIViewController and give a class ECPoweredByView
-
-
 
 
 ## Example

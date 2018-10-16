@@ -1,5 +1,4 @@
 import XCTest
-import EngagingChoice
 
 class Tests: XCTestCase {
     

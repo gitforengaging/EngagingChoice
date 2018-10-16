@@ -1,6 +1,6 @@
 //
 //  ECMediaContentManager.swift
-//  FabricSell
+//  EngagingChoice
 //
 //  Created by KiwiTech on 21/09/18.
 //
@@ -16,7 +16,7 @@ public class ECMediaContentManager: NSObject {
     // MARK: - Make init private
     public func contentList(offset:Int?, limit:Int?, callback:@escaping (_ content:[ECMediaContent]?) -> Void)  {
         // String url address for offerlist
-        let stringURL = "\(EngagingChoiceAPIBaseURL.baseURL)\(EngagingChoiceAPIEndPoint.contentList.rawValue)"
+        let stringURL = "\(EngagingChoiceAPIEndPoint.contentList.url)"
         var params:[String:Any] = [:]
         if let offset = offset {
             params[EngagingChoiceAPIKey.offset.rawValue] = offset
@@ -37,7 +37,7 @@ public class ECMediaContentManager: NSObject {
         // set content id
         self.contentId = id
         // String url address for offerlist
-        let stringURL = "\(EngagingChoiceAPIBaseURL.baseURL)\(EngagingChoiceAPIEndPoint.contentDetail.rawValue)/\(id)"
+        let stringURL = "\(EngagingChoiceAPIEndPoint.contentDetail.url)/\(id)"
         guard let url = URL(string: stringURL) else { return }
         // Download data from server
         ECDownloadManager.shared.downloadData(with: url, params: nil, modelType: ECMediaContentDetailModel.self, success: { (dataModel) in
