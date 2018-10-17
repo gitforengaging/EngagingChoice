@@ -6,7 +6,6 @@
 //
 
 import UIKit
-
 public class ECMediaContentManager: NSObject {
     // MARK: - Class shared instance
     public static let shared = ECMediaContentManager()

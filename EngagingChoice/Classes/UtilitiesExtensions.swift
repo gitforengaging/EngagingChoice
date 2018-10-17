@@ -156,8 +156,10 @@ extension UIColor {
 extension Bundle {
     static var bundle:Bundle {
         let podBundle = Bundle(for: ECOfferTableViewCell.self)
-        let bundleURL = podBundle.url(forResource: "EngagingChoice", withExtension: "bundle")
-        return Bundle(url: bundleURL!)!
+        guard let bundle = podBundle.url(forResource: "EngagingChoice", withExtension: "bundle"), let bundleURL = Bundle(url: bundle) else {
+            fatalError("Expected `\(ECOfferTableViewCell.self)` Bundle not found in EngagingChoice.")
+        }
+        return bundleURL
     }
 }
 // MARK: - Video View Utilities class

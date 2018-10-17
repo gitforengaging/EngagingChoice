@@ -50,11 +50,7 @@ class ECCompleteProfileViewController: UIViewController {
     // MARK: - Proceed for Register
     @IBAction func proceed(_ sender: UIButton) {
         activeField?.resignFirstResponder()
-        guard let email = self.emailTextField.text else {
-            showAlertView(with: EngagingChoiceName.alertMessage.rawValue)
-            return
-        }
-        guard let mobileNumber = self.mobileNumberTextField.text else {
+        guard let email = self.emailTextField.text, let mobileNumber = self.mobileNumberTextField.text else {
             showAlertView(with: EngagingChoiceName.alertMessage.rawValue)
             return
         }
