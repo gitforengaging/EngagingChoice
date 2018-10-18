@@ -11,7 +11,7 @@ public class ECMediaContentManager: NSObject {
     public static let shared = ECMediaContentManager()
     // MARK: - Make init private
     private override init() {}
-    var contentId:Int?
+    final internal var contentId:Int?
     // MARK: - Make init private
     public func contentList(offset:Int?, limit:Int?, callback:@escaping (_ content:[ECMediaContent]?) -> Void)  {
         // String url address for offerlist
@@ -45,5 +45,8 @@ public class ECMediaContentManager: NSObject {
             }
         }) { (error) in
         }
+    }
+    internal func removeContentId() {
+        self.contentId = nil
     }
 }

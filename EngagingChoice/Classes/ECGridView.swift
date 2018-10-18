@@ -67,6 +67,11 @@ open class ECGridView: UIView {
         powerByThumbImageView.contentMode = .scaleAspectFit
         powerByThumbImageView.image = UIImage.poweredByIcon
         poweredByThumbView.addSubview(powerByThumbImageView)
+        // Add Tap Gesture on GridView
+        let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
+        tap.cancelsTouchesInView = false
+        self.isUserInteractionEnabled = true
+        self.addGestureRecognizer(tap)
     }
     // MARK: - Accessibility
     /**
@@ -83,7 +88,7 @@ open class ECGridView: UIView {
             poweredByThumbView.translatesAutoresizingMaskIntoConstraints = false
             powerByThumbImageView.translatesAutoresizingMaskIntoConstraints = false
             coverImageView.translatesAutoresizingMaskIntoConstraints = false
-            // Thumb View Contraint
+            // Thumb View Constraint
             addConstraint(NSLayoutConstraint(item: poweredByThumbView,
                                              attribute: .height,
                                              relatedBy: .equal,
@@ -112,7 +117,7 @@ open class ECGridView: UIView {
                                              attribute: .bottom,
                                              multiplier: 1,
                                              constant: 0))
-            // Thumb image Contraint
+            // Thumb image Constraint
             addConstraint(NSLayoutConstraint(item: powerByThumbImageView,
                                              attribute: .height,
                                              relatedBy: .equal,
@@ -196,5 +201,9 @@ open class ECGridView: UIView {
                 failed(error)
             }
         }
+    }
+    @objc fileprivate func handleTap(_ sender: UITapGestureRecognizer?) {
+        // Update view count when tap on Media Content
+        ECMediaContentManager.shared.removeContentId()
     }
 }

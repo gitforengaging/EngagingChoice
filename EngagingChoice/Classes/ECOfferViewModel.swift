@@ -44,7 +44,9 @@ class ECOfferViewModel {
     }
     // MARK: - Update action
     func updateOfferAction(action: EngagingChoiceOfferAction) {
-        ECDownloadManager.shared.updateOfferActionOnServer(action: action, offerId: offerModel.id, contentId: ECMediaContentManager.shared.contentId)
+        ECDownloadManager.shared.updateOfferActionOnServer(action: action,
+                                                           offerId: offerModel.id,
+                                                           contentId: ECMediaContentManager.shared.contentId)
     }
     // MARK: - Create fileURL
     /// Create Image/Video url

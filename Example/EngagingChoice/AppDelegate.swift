@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
 //        ECGridManager.shared.config(secretKey: "300f2011c-9024-4bc0-9351-1ba9fced7d4f") //QA
         //        ECGridManager.shared.config(secretKey: "118c871ff76-4d9c-4eef-8a32-2b8b7cebf524") //QA2
-          ECGridManager.shared.config(secretKey: "5abd927e6-fbc8-4b0d-b4e6-f0016afaea65") // QA3
+          ECGridManager.shared.config(secretKey: "785fd63a7c-1a8b-4d52-a42f-011c5324a981") // QA3
 //                ECGridManager.shared.config(secretKey: "3258c0da8-38db-431f-a062-e44a59725c02") // Staging
 //        ECGridManager.shared.config(secretKey: "5d89d23dc-05db-4c47-8ad0-fc98e1d8f20b") // Load testing
         UINavigationBar.appearance().barTintColor = UIColor(red: 61/255, green: 106/255, blue: 211/255, alpha: 1.0)
