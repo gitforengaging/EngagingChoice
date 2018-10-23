@@ -173,7 +173,7 @@ extension ECOfferViewController {
     // MARK: - Show AlertView for location setting
     private func promptToAppSettings() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) { [weak self] in
-            let alert = UIAlertController(title: EngagingChoiceName.locationAlerHeading.rawValue, message: EngagingChoiceName.locationAlertMessage.rawValue, preferredStyle: .alert)
+            let alert = UIAlertController(title: EngagingChoiceName.locationAlertHeading.rawValue, message: EngagingChoiceName.locationAlertMessage.rawValue, preferredStyle: .alert)
             let okAction = UIAlertAction(title: "OK", style: .default, handler: { (action) in
                 self?.locationCallback()
             })

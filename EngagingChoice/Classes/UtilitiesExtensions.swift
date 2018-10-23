@@ -14,7 +14,7 @@ enum EngagingChoiceName:String {
     case guestUserProfileSubTitle = "Your Profile is not complete yet, Please complete your profile first using new email id and get more offers."
     case alertMessage = "Please fill all required fields"
     case success =  "Your details have been saved successfully"
-    case locationAlerHeading = "Location Services Disabled"
+    case locationAlertHeading = "Location Services Disabled"
     case locationAlertMessage = "Please enable Location Services in Settings"
 }
 enum EngagingChoiceGridCell:CGFloat {

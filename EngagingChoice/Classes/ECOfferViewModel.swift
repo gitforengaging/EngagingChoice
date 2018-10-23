@@ -25,14 +25,16 @@ class ECOfferViewModel {
         // Make sure email address setup correctly
         guard let email = ECGridManager.shared.getEmailAddress else { return }
         // String url address for offerlist with email, longitude and latitude parameter
-        var stringURL = "\(EngagingChoiceAPIEndPoint.offerList.url)/\(email)"
+        let stringURL = "\(EngagingChoiceAPIEndPoint.offerList.url)/\(email)"
+        var param =  [String: CLLocationDegrees]()
         if let coordinates = userCoordinates {
-            stringURL.append("/\(coordinates.latitude)/\(coordinates.longitude)")
+            param["latitude"] = coordinates.latitude
+            param["longitude"] = coordinates.longitude
         }
         // Make sure URL is nil before making request to server
         guard let url = URL(string: stringURL) else { return }
         // Download data from server
-        ECDownloadManager.shared.downloadData(with: url, params: nil ,modelType: ECOfferModel.self, success: { (dataModel) in
+        ECDownloadManager.shared.downloadData(with: url, params: param ,modelType: ECOfferModel.self, success: { (dataModel) in
             if let list = dataModel?.data {
                 self.offerList = list
                 self.pagination = dataModel?.pagination
