@@ -18,6 +18,7 @@ struct ImageDataModel {
 }
 
 class ExampleTableViewController: UITableViewController {
+    @IBOutlet weak var pullToRefresh: UIRefreshControl!
     // MARK: - Data model property
     var modeWithdata = [ImageDataModel]()
     var imagesURLs = [[ImageDataModel]]()
@@ -35,15 +36,28 @@ class ExampleTableViewController: UITableViewController {
         imagesURLs.append(modeWithdata)
         imagesURLs.append(modeWithdata)
         imagesURLs.append(modeWithdata)
+        self.getMediaContent()
+        // Reload data
+        pullToRefresh.addTarget(self, action: #selector(refershData(_:)), for: .valueChanged)
+    }
+    @objc private func refershData(_ sender: Any) {
+        // Fetch Weather Data
+        if pullToRefresh.isRefreshing{
+            self.getMediaContent()
+        } else {
+            self.pullToRefresh.endRefreshing()
+        }
+    }
+    
+    func getMediaContent()  {
         // Download media Content list
         ECMediaContentManager.shared.contentList(offset: nil, limit: nil) { (mediaContent) in
             if let mediaContent = mediaContent {
                 self.mediaConentmodel = mediaContent
                 self.tableView.reloadData()
             }
+            self.pullToRefresh.endRefreshing()
         }
-        self.tableView.reloadData()
-        // Reload data
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

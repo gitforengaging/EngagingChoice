@@ -22,10 +22,11 @@ public class ECGridManager: NSObject, OfferGridCompletionDelegate {
     private override init() {}
     // private clouse
     var showGridCallback:(() -> Void) = {}
+    private var viewPresenter: UIViewController?
      // MARK: - Get secret key
     internal var getSecretKey:String? {
         if (ECGridManager.secretKey == nil) {
-            print("Secret key is not available, Please set Secret key in ECGrimanager.config(secretKey key:String) and add this line of code in didFinishLaunchingWithOptions.")
+            print("Secret key is not available, Please set Secret key in ECGridmanager.config(secretKey key:String) and add this line of code in didFinishLaunchingWithOptions.")
         }
         return ECGridManager.secretKey
     }
@@ -37,7 +38,7 @@ public class ECGridManager: NSObject, OfferGridCompletionDelegate {
     }
     // MARK: - Config Key
     /**
-        Set secret key to request API from server
+        Set secret key to make API request to server
      */
     ///
     /// - Parameter key: It's mandatory field to make API request
@@ -52,7 +53,7 @@ public class ECGridManager: NSObject, OfferGridCompletionDelegate {
     ///
     /// - Parameters:
     ///   - controller: View in which Controller present
-    ///   - email: Email is used to fetch filter offer list
+    ///   - email: Email is used to fetch offer list
     public static func showOfferList(view controller:UIViewController, email:String) {
         ECGridManager.email = email.isEmpty ? nil : email
         let gridViewController = ECOfferViewController(nibName: "\(ECOfferViewController.self)", bundle: Bundle.bundle)
@@ -61,14 +62,23 @@ public class ECGridManager: NSObject, OfferGridCompletionDelegate {
     // MARK: - Show Offer List View Controller with completion handler
     public static func showOfferList(view controller:UIViewController, email:String, completion: @escaping (() -> Swift.Void)) {
         ECGridManager.shared.showGridCallback = completion
+        ECGridManager.shared.viewPresenter = controller
         ECGridManager.email = email.isEmpty ? nil : email
         let gridViewController = ECOfferViewController(nibName: "\(ECOfferViewController.self)", bundle: Bundle.bundle)
         gridViewController.showGridDelegate = ECGridManager.shared
         controller.present(gridViewController, animated: true, completion: nil)
+        controller.view.isHidden = true
     }
     // MARK: - Show Grid Completion Delegate
     internal func didFinishedShowOffer() {
         ECGridManager.shared.showGridCallback()
+        unHiddenPresenter(withDelay: .now() + 0.5)
+    }
+    // MARK: - Hide Present ViewController
+    internal func unHiddenPresenter(withDelay time: DispatchTime) {
+        DispatchQueue.main.asyncAfter(deadline: time) { [weak self] in
+            self?.viewPresenter?.view.isHidden = false
+        }
     }
      // MARK: - Show complete registration profile popUp
     internal func showCompeteProfilePopup(view controller: UIViewController, isGuest: EngagingChoiceUserType = .new)  {

@@ -1,6 +1,6 @@
 {
   "name": "EngagingChoice",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "summary": "ENGAGING CHOICE -- THE NEW PERSON-BASED PERFORMANCE PLATFORM FOR MARKETERS, PUBLISHERS AND CONTENT PROVIDERS",
   "swift_version": "4.0",
   "description": "The Engaging Choice Platform is a patented performance and personalization engine built for the App Economy. We don’t just show ads. We present offers and give users the power of choice, creating an entirely engaged interaction that benefits user, marketer and publisher.",
@@ -14,7 +14,7 @@
   },
   "source": {
     "git": "https://github.com/gitforengaging/EngagingChoice.git",
-    "tag": "0.1.2"
+    "tag": "0.1.3"
   },
   "platforms": {
     "ios": "11.0"

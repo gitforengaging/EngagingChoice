@@ -14,9 +14,10 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ECOfferViewController" customModule="FabricSell" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ECOfferViewController" customModule="EngagingChoice" customModuleProvider="target">
             <connections>
                 <outlet property="headerTitle" destination="2qz-OU-C6e" id="qua-Ud-Z6u"/>
+                <outlet property="indicatorView" destination="h5J-pY-93S" id="wLT-61-smP"/>
                 <outlet property="shimmerView" destination="qei-iT-AOf" id="mnE-7p-dgp"/>
                 <outlet property="tableView" destination="BmO-Qu-3KQ" id="Ygk-LI-drI"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -71,9 +72,14 @@
                         <constraint firstAttribute="trailing" secondItem="2qz-OU-C6e" secondAttribute="trailing" constant="10" id="oR5-qY-fDt"/>
                     </constraints>
                 </view>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="h5J-pY-93S">
+                    <rect key="frame" x="177.5" y="323.5" width="20" height="20"/>
+                    <color key="color" red="0.23921568630000001" green="0.41568627450000001" blue="0.82745098039999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" red="0.094117647058823528" green="0.44705882352941173" blue="0.80784313725490198" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="h5J-pY-93S" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="7QZ-6h-c3G"/>
                 <constraint firstItem="qei-iT-AOf" firstAttribute="top" secondItem="DnK-ap-8IC" secondAttribute="bottom" constant="-1" id="8YP-pK-jWj"/>
                 <constraint firstItem="BmO-Qu-3KQ" firstAttribute="top" secondItem="DnK-ap-8IC" secondAttribute="bottom" constant="-1" id="DSG-D2-lh7"/>
                 <constraint firstItem="DnK-ap-8IC" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="GWe-1k-zIL"/>
@@ -82,6 +88,7 @@
                 <constraint firstItem="qei-iT-AOf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="b2A-83-mf5"/>
                 <constraint firstItem="BmO-Qu-3KQ" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="bId-Pf-Fug"/>
                 <constraint firstItem="qei-iT-AOf" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="iwj-dC-Pg1"/>
+                <constraint firstItem="h5J-pY-93S" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="lTo-7M-mcl"/>
                 <constraint firstItem="qei-iT-AOf" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="pZ6-Tx-A9G"/>
                 <constraint firstItem="BmO-Qu-3KQ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="tny-bC-gec"/>
                 <constraint firstItem="DnK-ap-8IC" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="u1E-KV-Udk"/>

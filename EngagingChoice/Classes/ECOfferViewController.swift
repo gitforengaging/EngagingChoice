@@ -11,6 +11,7 @@ class ECOfferViewController: UIViewController {
     @IBOutlet weak var headerTitle: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var shimmerView: UIImageView!
+    @IBOutlet weak var indicatorView: UIActivityIndicatorView!
     var cellheight = EngagingChoiceGridCell.cellHeight.rawValue
     weak var showGridDelegate:OfferGridCompletionDelegate?
     // MARK: - ModelView instance
@@ -45,10 +46,12 @@ class ECOfferViewController: UIViewController {
                 })
                 return
             }
+            self.indicatorView.stopAnimating()
             self.tableView.reloadData()
             // Show popUp View
             self.showPopUp()
         }) { (error) in
+            self.indicatorView.stopAnimating()
             self.dismiss(animated: true, completion: {
                 self.showGridDelegate?.didFinishedShowOffer()
             })
@@ -74,6 +77,7 @@ class ECOfferViewController: UIViewController {
     }
     // MARK: - close View Button Action
     @IBAction func closeController(_ sender: Any) {
+        ECGridManager.shared.unHiddenPresenter(withDelay: .now())
         self.dismiss(animated: true, completion: nil)
     }
     // MARK: - Memory Warning

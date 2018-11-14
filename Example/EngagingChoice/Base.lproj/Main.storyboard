@@ -93,7 +93,11 @@
                         <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBarItem>
                     <navigationItem key="navigationItem" title="FilmTime" largeTitleDisplayMode="always" id="zpo-CZ-bfc"/>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="F1Y-Cm-pb9">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </refreshControl>
                     <connections>
+                        <outlet property="pullToRefresh" destination="F1Y-Cm-pb9" id="b5G-98-Fz1"/>
                         <segue destination="TR2-cD-dpA" kind="presentation" identifier="detailTable" id="r9n-1F-KMf"/>
                     </connections>
                 </tableViewController>

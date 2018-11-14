@@ -163,10 +163,11 @@ class EGOfferGridDetailViewController: UIViewController, AVPlayerViewControllerD
         self.dismiss(animated: true, completion: nil)
     }
     fileprivate func sendBackToDetailController() {
-        self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: {
+        self.presentingViewController?.presentingViewController?.dismiss(animated: false, completion: {
             self.showGridDelegate?.didFinishedShowOffer()
         })
     }
+    
     // MARK: - Memory Warning
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

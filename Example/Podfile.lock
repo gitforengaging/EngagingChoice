@@ -1,6 +1,6 @@
 PODS:
   - Alamofire (4.7.3)
-  - EngagingChoice (0.1.2):
+  - EngagingChoice (0.1.3):
     - Alamofire (~> 4.7)
     - SDWebImage (~> 4.0)
   - SDWebImage (4.4.2):
@@ -21,7 +21,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
-  EngagingChoice: 682eb98063dcfebd00e4876e7bb938d08ac923d1
+  EngagingChoice: d60e3ed88a94ac1fd8d7d4fe5a33fa99812dedd3
   SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
 
 PODFILE CHECKSUM: 545a89014cc3323a84a7c89ab788bbcdbc0d99b1
