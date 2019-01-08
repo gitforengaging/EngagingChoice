@@ -26,6 +26,7 @@ enum EngagingChoiceAPIBaseURL:String {
     case dev = "https://engagingchoice-dev.kiwireader.com/publisherapi"
     case staging = "https://engagingchoice-staging.kiwireader.com/publisherapi"
     case loadTesting = "https://engagingchoice-loadtesting.kiwireader.com/publisherapi"
+    case betaTesting = "https://engagingchoice-beta.kiwireader.com/publisherapi"
     static var baseURL: String {
         return EngagingChoiceAPIBaseURL.qa.rawValue
     }
@@ -56,7 +57,7 @@ enum EngagingChoiceAPIEndPoint:String {
 }
 enum FormatterDate:String {
     case MMDY = "MMM dd, yyyy"
-    case defaultDateFormatter = "yyyy-dd-mm"
+    case defaultDateFormatter = "yyyy-MM-dd"
 }
 enum EngaingChoiceAPIKey:String {
     case id = "id"

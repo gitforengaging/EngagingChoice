@@ -75,10 +75,13 @@ class ECOfferViewModel {
     class func convertStringToDate(date:String) -> String? {
         let getDateFormatter = DateFormatter()
         getDateFormatter.dateFormat = FormatterDate.defaultDateFormatter.rawValue
+        getDateFormatter.timeZone = TimeZone(abbreviation: "UTC")
+
         // Display Date formatter
         let displayDateFormat = DateFormatter()
         displayDateFormat.dateFormat = FormatterDate.MMDY.rawValue
         // Convert date into display format
+        displayDateFormat.locale =  Locale(identifier: "en_US_POSIX")
         if let date = getDateFormatter.date(from: "\(date)") {
             return displayDateFormat.string(from: date)
         }

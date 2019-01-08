@@ -59,26 +59,30 @@ class ExampleDetailTableViewController: UITableViewController {
                 ECGridManager.showOfferList(view: self, email: email) {
                     self.VideoSetup()
                 }
-            } else {
-                // Defaut Email
-                ECGridManager.showOfferList(view: self, email: "you@yopmail.com") {
-                    self.VideoSetup()
-                }
             }
+        } else {
+            VideoSetup()
         }
     }
     func VideoSetup() {
+        if let dummyModel = model?.dummyModel, let url = URL(string: dummyModel.videoURL) {
+            videoPlay(with: url)
+        }
         if let stringURL = model?.apiModel?.fileName, let url = URL(string: stringURL) {
-            let player = AVPlayer(url: url)
-            // Create a new AVPlayerViewController and pass it a reference to the player.
-            let controller = AVPlayerViewController()
-            controller.player = player
-            controller.entersFullScreenWhenPlaybackBegins = true
-            self.present(controller, animated: true) {
-                controller.player?.play()
-            }
+            videoPlay(with: url)
         }
     }
+    fileprivate func videoPlay(with url: URL) {
+        let player = AVPlayer(url: url)
+        // Create a new AVPlayerViewController and pass it a reference to the player.
+        let controller = AVPlayerViewController()
+        controller.player = player
+        controller.entersFullScreenWhenPlaybackBegins = true
+        self.present(controller, animated: true) {
+            controller.player?.play()
+        }
+    }
+    
     // MARK: - Memory Warning
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

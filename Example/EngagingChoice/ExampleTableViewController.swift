@@ -15,6 +15,7 @@ struct ImageDataModel {
     var index:Int
     var name:String
     var sponserBy:String
+    var videoURL: String
 }
 
 class ExampleTableViewController: UITableViewController {
@@ -28,11 +29,11 @@ class ExampleTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // This data used only for demo purpose not for app store content
-        modeWithdata.append(ImageDataModel(url: "https://momsall.com/wp-content/uploads/2018/04/The-Boss-Baby.jpg", title: "Boss Babby", index: 0, name: "Boss Babby", sponserBy:"by DreamWorksTV"))
-        modeWithdata.append(ImageDataModel(url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHD-CZiPZt-bd95akXKDMqICVaxGVYr0GAbN49spvbN0EpznJ2ZQ", title: "How to Train Your Dragon", index: 1, name: "How to Train Your Dragon", sponserBy:"by DreamWorks Animation"))
-        modeWithdata.append(ImageDataModel(url: "https://lumiere-a.akamaihd.net/v1/images/open-uri20160107-21163-1uluvkw_9a643c10.jpeg", title: "Rapunzel", index: 2, name: "Rapunzel", sponserBy:"by Disney"))
-        modeWithdata.append(ImageDataModel(url: "https://lumiere-a.akamaihd.net/v1/images/r_thegooddinosaur_header_bcfd18b3.jpeg?region=0,0,2048,808", title: "The Good Dinosaur", index: 3, name: "The Good Dinosaur", sponserBy:"by Walt Disney Pictures"))
-        modeWithdata.append(ImageDataModel(url: "https://d13ezvd6yrslxm.cloudfront.net/wp/wp-content/images/megamind-trailer-3.jpg", title: "Megamind", index: 4, name: "Megamind", sponserBy:"by DreamWorks Animation"))
+        modeWithdata.append(ImageDataModel(url: "https://momsall.com/wp-content/uploads/2018/04/The-Boss-Baby.jpg", title: "Boss Babby", index: 0, name: "Boss Babby", sponserBy:"by DreamWorksTV", videoURL: "https://fn-prod-beta.s3.us-east-2.amazonaws.com/provider/content/mokczwvao.mp4"))
+        modeWithdata.append(ImageDataModel(url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHD-CZiPZt-bd95akXKDMqICVaxGVYr0GAbN49spvbN0EpznJ2ZQ", title: "How to Train Your Dragon", index: 1, name: "How to Train Your Dragon", sponserBy:"by DreamWorks Animation", videoURL: "https://fn-prod-beta.s3.us-east-2.amazonaws.com/provider/content/gmusf67dz.mp4"))
+        modeWithdata.append(ImageDataModel(url: "https://lumiere-a.akamaihd.net/v1/images/open-uri20160107-21163-1uluvkw_9a643c10.jpeg", title: "Rapunzel", index: 2, name: "Rapunzel", sponserBy:"by Disney", videoURL: "https://fn-prod-beta.s3.us-east-2.amazonaws.com/provider/content/28yeh3aiq.mp4"))
+        modeWithdata.append(ImageDataModel(url: "https://lumiere-a.akamaihd.net/v1/images/r_thegooddinosaur_header_bcfd18b3.jpeg?region=0,0,2048,808", title: "The Good Dinosaur", index: 3, name: "The Good Dinosaur", sponserBy:"by Walt Disney Pictures", videoURL: "https://fn-prod-beta.s3.us-east-2.amazonaws.com/provider/content/oplv9vhro.mp4"))
+        modeWithdata.append(ImageDataModel(url: "https://d13ezvd6yrslxm.cloudfront.net/wp/wp-content/images/megamind-trailer-3.jpg", title: "Megamind", index: 4, name: "Megamind", sponserBy:"by DreamWorks Animation", videoURL: "https://fn-prod-beta.s3.us-east-2.amazonaws.com/provider/content/e6kx6j89h.mp4"))
         imagesURLs.append(modeWithdata)
         imagesURLs.append(modeWithdata)
         imagesURLs.append(modeWithdata)
@@ -78,7 +79,7 @@ class ExampleTableViewController: UITableViewController {
         if section == 0 {
             headingLabel.text = "Most Popular"
         } else if section == MediaContentIndex.addAt.rawValue && !mediaConentmodel.isEmpty {
-            headingLabel.text = "Engaging Choice"
+            
         } else {
             if mediaConentmodel.isEmpty && section == MediaContentIndex.addAt.rawValue {
                 headingLabel.text = "New Releases"
@@ -91,6 +92,9 @@ class ExampleTableViewController: UITableViewController {
         return headerView
     }
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if section == MediaContentIndex.addAt.rawValue && !mediaConentmodel.isEmpty {
+            return 0
+        }
         return TableCellConfig.headerHeight.rawValue
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
