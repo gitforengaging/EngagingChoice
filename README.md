@@ -74,9 +74,9 @@ cell.gridView.coverImageView.sd_setImage(with: url, placeholderImage: UIImage(na
 OR
 
 cell.gridView.coverImageView.image = UIImage(name: "FILE_NAME")
-
-After adding gridview use enabledPowerBy flag to turn on/off EngagingChoice icon on Movie cover Image
 ```
+And after adding gridview in cell or collectionView use enabledPowerBy flag to turn on/off powered EngagingChoice icon on Movies cover Image
+
 4. FOURTH STEP
 - ECPoweredByView uses
 ```swift
