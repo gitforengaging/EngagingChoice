@@ -89,6 +89,16 @@ OR
 
 ECPoweredByView can also used from storyboard by draging UIView in UIViewController and give a class ECPoweredByView
 
+4. FOURTH STEP
+
+On play video call below callback method to show offer list to user
+```swift
+import EngagingChoice
+
+ECGridManager.showOfferList(view: self, email: "LOGIN_USER_EMAIL_ADDRESS") {
+    // Play Video
+}
+```
 
 ## Example
 
