@@ -22,14 +22,9 @@ enum EngagingChoiceGridCell:CGFloat {
     case numberOfCell = 3
 }
 enum EngagingChoiceAPIBaseURL:String {
-    case qa = "https://engagingchoice-qa.kiwireader.com/publisherapi"
-    case dev = "https://engagingchoice-dev.kiwireader.com/publisherapi"
-    case staging = "https://engagingchoice-staging.kiwireader.com/publisherapi"
-    case loadTesting = "https://engagingchoice-loadtesting.kiwireader.com/publisherapi"
-    case betaTesting = "https://engagingchoice-beta.kiwireader.com/publisherapi"
-    case preProdction = "https://preprod.engagingchoice.com/publisherapi"
+    case prodction = "https://www.engagingchoice.com/publisherapi"
     static var baseURL: String {
-        return EngagingChoiceAPIBaseURL.preProdction.rawValue
+        return EngagingChoiceAPIBaseURL.prodction.rawValue
     }
 }
 enum EngagingChoiceAPIEndPoint:String {
